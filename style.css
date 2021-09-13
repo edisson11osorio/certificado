@@ -12,6 +12,7 @@ h1{
     margin-top: 0;
     margin-bottom: 40px;
 }
+
 img{
     border-radius: 150%;
     height: 120px;
@@ -24,4 +25,23 @@ main{
 
 main *{
     margin-bottom: 12px;
+}
+
+input[name="Name"]{
+    font-size: large;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+#submit{
+    background: #A0123F;
+    color: wheat;
+    font-size: .8em;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    margin: 20px;
+    cursor: pointer;
+    
 }
