@@ -4,12 +4,30 @@ const generetePDF = async (name) => {
     const exBytes = await fetch("./bookii.pdf").then((res) => {
         return res.arrayBuffer();
     });
-    const pdfDoc = await PDFDocument.load(exBytes)
-     
-    const uri = await pdfDoc.saveAsBase64({dataUri: true})
 
+    const exFont = await fetch("./Sanchez-Regular.ttf").then(res =>{
+        return res.arrayBuffer()
+    })
+    
+    const pdfDoc = await PDFDocument.load(exBytes)
+    
+    pdfDoc.registerFontkit(fontkit);
+    const myFont = await pdfDoc.embedFont(exFont);
+
+    const pages = pdfDoc.getPages();
+    const firstPg = pages[0]
+
+    firstPg.drawText(name,{
+        x: 260,
+        y: 350,
+        size: 45,
+        font: myFont,
+    })
+  
+    const uri = await pdfDoc.saveAsBase64({dataUri: true})
+    
     document.querySelector("#mypdf").src = uri;
      
 };
 
-generetePDF()
+generetePDF("Edisson Osorio",)
