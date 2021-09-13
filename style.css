@@ -1,0 +1,8 @@
+body{
+    font-family: system-ui;
+    text-align: center;
+}
+img{
+    border-radius: 150%;
+    height: 120px;
+}
