@@ -1,7 +1,7 @@
 const generetePDF = async (name) => {
     const { PDFDocument, rgb } = PDFLib;
 
-    const exBytes = await fetch("./bookii.pdf").then((res) => {
+    const exBytes = await fetch("./bokii.pdf").then((res) => {
         return res.arrayBuffer();
     });
 
@@ -18,7 +18,7 @@ const generetePDF = async (name) => {
     const firstPg = pages[0]
 
     firstPg.drawText(name, {
-        x: 260,
+        x: 245,
         y: 350,
         size: 45,
         font: myFont,
